@@ -6,10 +6,17 @@ import UserListScreen  from './screens/UserListScreen';
 import PostListScreen from './screens/PostListScreen';
 import UserDetailScreen from './screens/UserDetailScreen';
 import PostDetailScreen from './screens/PostDetailScreen';
+import CommentListScreen from './screens/CommentListScreen';
+import AlbumListScreen from './screens/AlbumListScreen';
+import PhotoListScreen from './screens/PhotoListScreen';
+import ToDoListScreen from './screens/ToDoListScreen';
+
+
 
 const Stack = createNativeStackNavigator();
 global.UserDetailValue = 0;
 global.PostDetailValue = 0;
+global.AlbumDetailValue = 0;
 
 const myStack = () => {
   return (
@@ -35,6 +42,22 @@ const myStack = () => {
         <Stack.Screen
         name='PostDetailScreen'
         component={PostDetailScreen}
+        options={{headerShown:false}}/>
+        <Stack.Screen
+        name='CommentListScreen'
+        component={CommentListScreen}
+        options={{headerShown:false}}/>
+        <Stack.Screen
+        name='AlbumListScreen'
+        component={AlbumListScreen}
+        options={{headerShown:false}}/>
+        <Stack.Screen
+        name='PhotoListScreen'
+        component={PhotoListScreen}
+        options={{headerShown:false}}/>
+        <Stack.Screen
+        name='ToDoListScreen'
+        component={ToDoListScreen}
         options={{headerShown:false}}/>
       </Stack.Navigator>
     </NavigationContainer>

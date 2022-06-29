@@ -26,13 +26,17 @@ const UserListScreen = ({ navigation }) => {
     }
 
     return (
-        <View style={{flex:1 ,backgroundColor:'#631126'}}>
-            <View style={{flex:1,margin:20}}> 
-                <Text style={{color:'black', textAlign:'center',fontSize:48}}>UserListScreen</Text>
-                <FlatList style={{flex:8,backgroundColor:'#E36282', padding:20, borderRadius:40,marginVertical:20}} data={Users} renderItem={renderUser} keyExtractor={(item) => item.id}></FlatList>
-                <TouchableOpacity style={{height:60,marginTop:20,backgroundColor:'#E36282',borderRadius:40, justifyContent:'center',alignItems:'center'}} onPress={() => navigation.navigate('HomeScreen')}>
-                <Text style={{fontSize:24}}>Go To Home Page</Text>
-                </TouchableOpacity>
+        <View style={{flex:1 ,backgroundColor:'#ecf0f1'}}>
+            <View style={{height:80,backgroundColor:"#bdc3c7",marginBottom:10,flexDirection:"row",alignItems:"center"}}>
+                    <TouchableOpacity style={{marginLeft:10,marginRight:40,height:40,width:100,backgroundColor:'#ecf0f1',borderRadius:20, justifyContent:'center',alignItems:'center'}} 
+                    onPress={() => {global.UserDetailValue=0,navigation.navigate('HomeScreen')}}>
+                    <Text style={{fontSize:16}}>Go Back</Text>
+                    </TouchableOpacity>
+                    <Text style={{color:'#2c3e50', textAlign:'left',textAlignVertical: "center",fontSize:32,marginLeft:10}}>Users</Text>
+                </View>
+            <View style={{flex:1,marginHorizontal:20,marginBottom:10}}> 
+                <FlatList style={{flex:8,backgroundColor:'#bdc3c7', padding:20, borderRadius:40,marginVertical:20}} data={Users} renderItem={renderUser} keyExtractor={(item) => item.id}></FlatList>
+                
             </View>
         </View>
         
